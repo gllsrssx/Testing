@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0 (Python 3.10.7 on win32)" generated="20221027 15:46:08.725" rpa="false" schemaversion="3">
+<suite id="s1" name="Tests" source="C:\Users\gille\Documents\School\ThomasMore\Testing\02_testautomation\07_Exercises\Exercise4\tests">
+<suite id="s1-s1" name="01 signinTest" source="C:\Users\gille\Documents\School\ThomasMore\Testing\02_testautomation\07_Exercises\Exercise4\tests\01_signinTest.robot">
+<kw name="Open My Website" library="basePage" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221027 15:46:09.135" level="INFO">Opening browser 'Google Chrome' to base url 'http://practice.automationtesting.in'.</msg>
+<status status="PASS" starttime="20221027 15:46:09.134" endtime="20221027 15:46:15.446"/>
+</kw>
+<status status="PASS" starttime="20221027 15:46:09.134" endtime="20221027 15:46:15.446"/>
+</kw>
+<test id="s1-s1-t1" name="Login Without Email Address" line="10">
+<kw name="Go To Signin Page" library="homePage" type="SETUP">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SIGNIN_LNK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221027 15:46:15.448" level="INFO">Clicking element 'xpath://a[normalize-space()='My Account']'.</msg>
+<status status="PASS" starttime="20221027 15:46:15.447" endtime="20221027 15:46:17.407"/>
+</kw>
+<status status="PASS" starttime="20221027 15:46:15.447" endtime="20221027 15:46:17.407"/>
+</kw>
+<kw name="Log In With Account" library="signInPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${EMAIL_LOGIN_TXT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221027 15:46:17.421" endtime="20221027 15:46:17.443"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${EMAIL_LOGIN_TXT}</arg>
+<arg>${emailaddress}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221027 15:46:17.444" level="INFO">Typing text '' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20221027 15:46:17.443" endtime="20221027 15:46:17.720"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PASSWORD_LOGIN_TXT}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221027 15:46:17.720" level="INFO">Typing text '' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20221027 15:46:17.720" endtime="20221027 15:46:17.780"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOGIN_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221027 15:46:17.781" level="INFO">Clicking element 'xpath://input[@name='login']'.</msg>
+<status status="PASS" starttime="20221027 15:46:17.781" endtime="20221027 15:46:19.374"/>
+</kw>
+<status status="PASS" starttime="20221027 15:46:17.420" endtime="20221027 15:46:19.374"/>
+</kw>
+<kw name="Get Login Error Message" library="signInPage">
+<var>${errorMessage}</var>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LOGIN_ERROR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221027 15:46:19.401" endtime="20221027 15:46:19.556"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${LOGIN_ERROR}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221027 15:46:19.590" level="INFO">${text} = Error: Username is required.</msg>
+<status status="PASS" starttime="20221027 15:46:19.556" endtime="20221027 15:46:19.590"/>
+</kw>
+<msg timestamp="20221027 15:46:19.590" level="INFO">${errorMessage} = Error: Username is required.</msg>
+<status status="PASS" starttime="20221027 15:46:19.401" endtime="20221027 15:46:19.590"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${errorMessage}</arg>
+<arg>Username is required</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20221027 15:46:19.590" endtime="20221027 15:46:19.591"/>
+</kw>
+<status status="PASS" starttime="20221027 15:46:15.446" endtime="20221027 15:46:19.593"/>
+</test>
+<test id="s1-s1-t2" name="Login With Unexisting Account" line="15">
+<kw name="Go To Signin Page" library="homePage" type="SETUP">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SIGNIN_LNK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221027 15:46:19.595" level="INFO">Clicking element 'xpath://a[normalize-space()='My Account']'.</msg>
+<status status="PASS" starttime="20221027 15:46:19.595" endtime="20221027 15:46:20.683"/>
+</kw>
+<status status="PASS" starttime="20221027 15:46:19.595" endtime="20221027 15:46:20.683"/>
+</kw>
+<kw name="Log In With Account" library="signInPage">
+<arg>notanaccount@gmail.com</arg>
+<arg>password</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${EMAIL_LOGIN_TXT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221027 15:46:20.724" endtime="20221027 15:46:20.922"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${EMAIL_LOGIN_TXT}</arg>
+<arg>${emailaddress}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221027 15:46:20.923" level="INFO">Typing text 'notanaccount@gmail.com' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20221027 15:46:20.922" endtime="20221027 15:46:21.021"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PASSWORD_LOGIN_TXT}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221027 15:46:21.022" level="INFO">Typing text 'password' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20221027 15:46:21.021" endtime="20221027 15:46:21.088"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOGIN_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221027 15:46:21.089" level="INFO">Clicking element 'xpath://input[@name='login']'.</msg>
+<status status="PASS" starttime="20221027 15:46:21.088" endtime="20221027 15:46:22.401"/>
+</kw>
+<status status="PASS" starttime="20221027 15:46:20.724" endtime="20221027 15:46:22.401"/>
+</kw>
+<kw name="Get Login Error Message" library="signInPage">
+<var>${errorMessage}</var>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LOGIN_ERROR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221027 15:46:22.402" endtime="20221027 15:46:22.433"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${LOGIN_ERROR}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221027 15:46:22.465" level="INFO">${text} = Error: A user could not be found with this email address.</msg>
+<status status="PASS" starttime="20221027 15:46:22.433" endtime="20221027 15:46:22.466"/>
+</kw>
+<msg timestamp="20221027 15:46:22.466" level="INFO">${errorMessage} = Error: A user could not be found with this email address.</msg>
+<status status="PASS" starttime="20221027 15:46:22.402" endtime="20221027 15:46:22.466"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${errorMessage}</arg>
+<arg>A user could not be found with this email address</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20221027 15:46:22.466" endtime="20221027 15:46:22.467"/>
+</kw>
+<status status="PASS" starttime="20221027 15:46:19.594" endtime="20221027 15:46:22.467"/>
+</test>
+<test id="s1-s1-t3" name="Login Without Password" line="20">
+<kw name="Go To Signin Page" library="homePage" type="SETUP">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SIGNIN_LNK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221027 15:46:22.468" level="INFO">Clicking element 'xpath://a[normalize-space()='My Account']'.</msg>
+<status status="PASS" starttime="20221027 15:46:22.468" endtime="20221027 15:46:25.057"/>
+</kw>
+<status status="PASS" starttime="20221027 15:46:22.468" endtime="20221027 15:46:25.057"/>
+</kw>
+<kw name="Log In With Account" library="signInPage">
+<arg>notanaccount@gmail.com</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${EMAIL_LOGIN_TXT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221027 15:46:25.060" endtime="20221027 15:46:25.236"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${EMAIL_LOGIN_TXT}</arg>
+<arg>${emailaddress}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221027 15:46:25.237" level="INFO">Typing text 'notanaccount@gmail.com' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20221027 15:46:25.236" endtime="20221027 15:46:25.356"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PASSWORD_LOGIN_TXT}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221027 15:46:25.356" level="INFO">Typing text '' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20221027 15:46:25.356" endtime="20221027 15:46:25.423"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOGIN_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221027 15:46:25.425" level="INFO">Clicking element 'xpath://input[@name='login']'.</msg>
+<status status="PASS" starttime="20221027 15:46:25.424" endtime="20221027 15:46:27.063"/>
+</kw>
+<status status="PASS" starttime="20221027 15:46:25.060" endtime="20221027 15:46:27.063"/>
+</kw>
+<kw name="Get Login Error Message" library="signInPage">
+<var>${errorMessage}</var>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LOGIN_ERROR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221027 15:46:27.086" endtime="20221027 15:46:27.196"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${LOGIN_ERROR}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221027 15:46:27.212" level="INFO">${text} = Error: Password is required.</msg>
+<status status="PASS" starttime="20221027 15:46:27.196" endtime="20221027 15:46:27.212"/>
+</kw>
+<msg timestamp="20221027 15:46:27.212" level="INFO">${errorMessage} = Error: Password is required.</msg>
+<status status="PASS" starttime="20221027 15:46:27.085" endtime="20221027 15:46:27.212"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${errorMessage}</arg>
+<arg>Password is required.</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20221027 15:46:27.212" endtime="20221027 15:46:27.213"/>
+</kw>
+<status status="PASS" starttime="20221027 15:46:22.467" endtime="20221027 15:46:27.213"/>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20221027 15:46:27.214" endtime="20221027 15:46:29.391"/>
+</kw>
+<status status="PASS" starttime="20221027 15:46:08.757" endtime="20221027 15:46:29.391"/>
+</suite>
+<suite id="s1-s2" name="02 registerTest" source="C:\Users\gille\Documents\School\ThomasMore\Testing\02_testautomation\07_Exercises\Exercise4\tests\02_registerTest.robot">
+<kw name="Open My Website" library="basePage" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221027 15:46:29.400" level="INFO">Opening browser 'Google Chrome' to base url 'http://practice.automationtesting.in'.</msg>
+<status status="PASS" starttime="20221027 15:46:29.399" endtime="20221027 15:46:35.290"/>
+</kw>
+<status status="PASS" starttime="20221027 15:46:29.399" endtime="20221027 15:46:35.290"/>
+</kw>
+<test id="s1-s2-t1" name="Register without email" line="12">
+<kw name="Go To Signin Page" library="homePage" type="SETUP">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SIGNIN_LNK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221027 15:46:35.295" level="INFO">Clicking element 'xpath://a[normalize-space()='My Account']'.</msg>
+<status status="PASS" starttime="20221027 15:46:35.294" endtime="20221027 15:46:37.391"/>
+</kw>
+<status status="PASS" starttime="20221027 15:46:35.294" endtime="20221027 15:46:37.391"/>
+</kw>
+<kw name="Create Account" library="signInPage">
+<arg>${SPACE}</arg>
+<arg>MY_strong_PAsword2000</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${EMAIL_CREATE_TXT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221027 15:46:37.396" endtime="20221027 15:46:37.439"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${EMAIL_CREATE_TXT}</arg>
+<arg>${emailaddress}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221027 15:46:37.440" level="INFO">Typing text ' ' into text field 'id:reg_email'.</msg>
+<status status="PASS" starttime="20221027 15:46:37.439" endtime="20221027 15:46:38.103"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${EMAIL_CREATE_PASSW}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221027 15:46:38.104" level="INFO">Typing text 'MY_strong_PAsword2000' into text field 'id:reg_password'.</msg>
+<status status="PASS" starttime="20221027 15:46:38.103" endtime="20221027 15:46:38.317"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221027 15:46:40.330" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221027 15:46:38.318" endtime="20221027 15:46:40.330"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${EMAIL_CREATE_TXT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221027 15:46:40.331" level="INFO">Clicking element 'id:reg_email'.</msg>
+<status status="PASS" starttime="20221027 15:46:40.330" endtime="20221027 15:46:40.381"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CREATE_ACCOUNT_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221027 15:46:40.381" level="INFO">Clicking element 'name:register'.</msg>
+<status status="PASS" starttime="20221027 15:46:40.381" endtime="20221027 15:46:41.868"/>
+</kw>
+<status status="PASS" starttime="20221027 15:46:37.395" endtime="20221027 15:46:41.868"/>
+</kw>
+<kw name="Get Create Account Error Message" library="signInPage">
+<var>${errorMessage}</var>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CREATE_ACCOUNT_ERROR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221027 15:46:41.871" endtime="20221027 15:46:42.032"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${CREATE_ACCOUNT_ERROR}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221027 15:46:42.067" level="INFO">${text} = Error: Please provide a valid email address.</msg>
+<status status="PASS" starttime="20221027 15:46:42.032" endtime="20221027 15:46:42.067"/>
+</kw>
+<msg timestamp="20221027 15:46:42.068" level="INFO">${errorMessage} = Error: Please provide a valid email address.</msg>
+<status status="PASS" starttime="20221027 15:46:41.870" endtime="20221027 15:46:42.068"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${errorMessage}</arg>
+<arg>Please provide a valid email address</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20221027 15:46:42.068" endtime="20221027 15:46:42.068"/>
+</kw>
+<status status="PASS" starttime="20221027 15:46:35.290" endtime="20221027 15:46:42.069"/>
+</test>
+<test id="s1-s2-t2" name="Register without password" line="17">
+<kw name="Go To Signin Page" library="homePage" type="SETUP">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SIGNIN_LNK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221027 15:46:42.071" level="INFO">Clicking element 'xpath://a[normalize-space()='My Account']'.</msg>
+<status status="PASS" starttime="20221027 15:46:42.071" endtime="20221027 15:46:44.227"/>
+</kw>
+<status status="PASS" starttime="20221027 15:46:42.071" endtime="20221027 15:46:44.228"/>
+</kw>
+<kw name="Create Account" library="signInPage">
+<arg>someaddress@provider.com</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${EMAIL_CREATE_TXT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221027 15:46:44.229" endtime="20221027 15:46:44.251"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${EMAIL_CREATE_TXT}</arg>
+<arg>${emailaddress}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221027 15:46:44.251" level="INFO">Typing text 'someaddress@provider.com' into text field 'id:reg_email'.</msg>
+<status status="PASS" starttime="20221027 15:46:44.251" endtime="20221027 15:46:44.344"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${EMAIL_CREATE_PASSW}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221027 15:46:44.345" level="INFO">Typing text '' into text field 'id:reg_password'.</msg>
+<status status="PASS" starttime="20221027 15:46:44.344" endtime="20221027 15:46:44.400"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221027 15:46:46.402" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221027 15:46:44.400" endtime="20221027 15:46:46.402"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${EMAIL_CREATE_TXT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221027 15:46:46.402" level="INFO">Clicking element 'id:reg_email'.</msg>
+<status status="PASS" starttime="20221027 15:46:46.402" endtime="20221027 15:46:46.433"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CREATE_ACCOUNT_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221027 15:46:46.434" level="INFO">Clicking element 'name:register'.</msg>
+<status status="PASS" starttime="20221027 15:46:46.434" endtime="20221027 15:46:47.623"/>
+</kw>
+<status status="PASS" starttime="20221027 15:46:44.228" endtime="20221027 15:46:47.623"/>
+</kw>
+<kw name="Get Create Account Error Message" library="signInPage">
+<var>${errorMessage}</var>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CREATE_ACCOUNT_ERROR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221027 15:46:47.625" endtime="20221027 15:46:47.747"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${CREATE_ACCOUNT_ERROR}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221027 15:46:47.764" level="INFO">${text} = Error: Please enter an account password.</msg>
+<status status="PASS" starttime="20221027 15:46:47.748" endtime="20221027 15:46:47.764"/>
+</kw>
+<msg timestamp="20221027 15:46:47.765" level="INFO">${errorMessage} = Error: Please enter an account password.</msg>
+<status status="PASS" starttime="20221027 15:46:47.625" endtime="20221027 15:46:47.765"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${errorMessage}</arg>
+<arg>Please enter an account password</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20221027 15:46:47.772" endtime="20221027 15:46:47.773"/>
+</kw>
+<status status="PASS" starttime="20221027 15:46:42.070" endtime="20221027 15:46:47.773"/>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20221027 15:46:47.774" endtime="20221027 15:46:49.928"/>
+</kw>
+<status status="PASS" starttime="20221027 15:46:29.392" endtime="20221027 15:46:49.928"/>
+</suite>
+<status status="PASS" starttime="20221027 15:46:08.728" endtime="20221027 15:46:49.929"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="5" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s1" name="01 signinTest">Tests.01 signinTest</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s2" name="02 registerTest">Tests.02 registerTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

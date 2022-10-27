@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0 (Python 3.10.7 on win32)" generated="20221027 15:27:53.157" rpa="false" schemaversion="3">
+<suite id="s1" name="Tests" source="C:\Users\gille\Documents\School\ThomasMore\Testing\02_testautomation\04_Selenium\Exercise2\tests">
+<suite id="s1-s1" name="01 openPageInBrowser" source="C:\Users\gille\Documents\School\ThomasMore\Testing\02_testautomation\04_Selenium\Exercise2\tests\01_openPageInBrowser.robot">
+<test id="s1-s1-t1" name="The First Selenium Test" line="8">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://www.brightest.be</arg>
+<arg>Google Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221027 15:27:53.479" level="INFO">Opening browser 'Google Chrome' to base url 'http://www.brightest.be'.</msg>
+<status status="PASS" starttime="20221027 15:27:53.479" endtime="20221027 15:27:59.876"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221027 15:28:04.880" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221027 15:27:59.877" endtime="20221027 15:28:04.881"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20221027 15:28:04.881" endtime="20221027 15:28:07.063"/>
+</kw>
+<status status="PASS" starttime="20221027 15:27:53.478" endtime="20221027 15:28:07.063"/>
+</test>
+<test id="s1-s1-t2" name="The Selenium Test With Keywords" line="13">
+<kw name="Open My Website" library="basePage">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221027 15:28:07.065" level="INFO">Opening browser 'Google Chrome' to base url 'https://tweakers.net'.</msg>
+<status status="PASS" starttime="20221027 15:28:07.065" endtime="20221027 15:28:10.127"/>
+</kw>
+<status status="PASS" starttime="20221027 15:28:07.064" endtime="20221027 15:28:10.128"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221027 15:28:15.133" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221027 15:28:10.128" endtime="20221027 15:28:15.133"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20221027 15:28:15.133" endtime="20221027 15:28:17.255"/>
+</kw>
+<status status="PASS" starttime="20221027 15:28:07.064" endtime="20221027 15:28:17.255"/>
+</test>
+<status status="PASS" starttime="20221027 15:27:53.193" endtime="20221027 15:28:17.256"/>
+</suite>
+<status status="PASS" starttime="20221027 15:27:53.161" endtime="20221027 15:28:17.257"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1" name="01 openPageInBrowser">Tests.01 openPageInBrowser</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

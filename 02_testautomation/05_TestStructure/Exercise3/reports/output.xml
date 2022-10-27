@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0 (Python 3.10.7 on win32)" generated="20221027 15:29:37.991" rpa="false" schemaversion="3">
+<suite id="s1" name="Tests" source="C:\Users\gille\Documents\School\ThomasMore\Testing\02_testautomation\05_TestStructure\Exercise3\tests">
+<suite id="s1-s1" name="01 aboutUsTest" source="C:\Users\gille\Documents\School\ThomasMore\Testing\02_testautomation\05_TestStructure\Exercise3\tests\01_aboutUsTest.robot">
+<kw name="Open My Website" library="basePage" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221027 15:29:38.250" level="INFO">Opening browser 'Google Chrome' to base url 'https://tweakers.net'.</msg>
+<status status="PASS" starttime="20221027 15:29:38.250" endtime="20221027 15:29:41.296"/>
+</kw>
+<status status="PASS" starttime="20221027 15:29:38.250" endtime="20221027 15:29:41.296"/>
+</kw>
+<test id="s1-s1-t1" name="Test Home Page Contains Expected Text" line="13">
+<kw name="Go To Home" library="homePage">
+<kw name="Delete All Cookies" library="SeleniumLibrary">
+<doc>Deletes all cookies.</doc>
+<status status="PASS" starttime="20221027 15:29:41.297" endtime="20221027 15:29:41.347"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20221027 15:29:41.348" level="INFO">Opening url 'https://tweakers.net'</msg>
+<status status="PASS" starttime="20221027 15:29:41.348" endtime="20221027 15:29:41.672"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${ACCEPT_COOKIES}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221027 15:29:41.672" endtime="20221027 15:29:41.695"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ACCEPT_COOKIES}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221027 15:29:41.695" level="INFO">Clicking element 'xpath://*[@id="koekieBar"]/div[1]/div[2]/button[1]'.</msg>
+<status status="PASS" starttime="20221027 15:29:41.695" endtime="20221027 15:29:41.732"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${ACCEPT_COOKIES}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20221027 15:29:41.732" endtime="20221027 15:29:42.110"/>
+</kw>
+<status status="PASS" starttime="20221027 15:29:41.297" endtime="20221027 15:29:42.111"/>
+</kw>
+<kw name="Get Smartphones text" library="homePage">
+<var>${text}</var>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${PHONES}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221027 15:29:42.111" endtime="20221027 15:29:42.132"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${PHONES}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221027 15:29:42.150" level="INFO">${text} = Beste smartphones »</msg>
+<status status="PASS" starttime="20221027 15:29:42.132" endtime="20221027 15:29:42.150"/>
+</kw>
+<msg timestamp="20221027 15:29:42.150" level="INFO">${text} = Beste smartphones »</msg>
+<status status="PASS" starttime="20221027 15:29:42.111" endtime="20221027 15:29:42.150"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${text}</arg>
+<arg>Beste smartphones</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20221027 15:29:42.151" endtime="20221027 15:29:42.151"/>
+</kw>
+<status status="PASS" starttime="20221027 15:29:41.296" endtime="20221027 15:29:42.151"/>
+</test>
+<test id="s1-s1-t2" name="Test About Us Page" line="18">
+<kw name="Go To Home" library="homePage">
+<kw name="Delete All Cookies" library="SeleniumLibrary">
+<doc>Deletes all cookies.</doc>
+<status status="PASS" starttime="20221027 15:29:42.153" endtime="20221027 15:29:42.240"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20221027 15:29:42.240" level="INFO">Opening url 'https://tweakers.net'</msg>
+<status status="PASS" starttime="20221027 15:29:42.240" endtime="20221027 15:29:42.478"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${ACCEPT_COOKIES}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221027 15:29:42.479" endtime="20221027 15:29:42.495"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ACCEPT_COOKIES}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221027 15:29:42.495" level="INFO">Clicking element 'xpath://*[@id="koekieBar"]/div[1]/div[2]/button[1]'.</msg>
+<status status="PASS" starttime="20221027 15:29:42.495" endtime="20221027 15:29:42.527"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${ACCEPT_COOKIES}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20221027 15:29:42.527" endtime="20221027 15:29:42.987"/>
+</kw>
+<status status="PASS" starttime="20221027 15:29:42.153" endtime="20221027 15:29:42.988"/>
+</kw>
+<kw name="Go To About Us" library="aboutUsPage">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${ABOUTUS}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20221027 15:29:42.989" level="INFO">Clicking link 'xpath://*[@id="about"]/ul[1]/li[4]/a'.</msg>
+<status status="PASS" starttime="20221027 15:29:42.988" endtime="20221027 15:29:43.226"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${ABOUTUS_TXT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221027 15:29:43.226" endtime="20221027 15:29:43.249"/>
+</kw>
+<status status="PASS" starttime="20221027 15:29:42.988" endtime="20221027 15:29:43.250"/>
+</kw>
+<kw name="Get About Us Text" library="aboutUsPage">
+<var>${text}</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${ABOUTUS_TXT}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221027 15:29:43.267" level="INFO">${text} = Een onafhankelijke expert biedt uitkomst. Daarom is Tweakers er. Inmiddels bestaat onze community uit meer dan een half miljoen leden met één grote passie: technologie. Samen met die community is de r...</msg>
+<status status="PASS" starttime="20221027 15:29:43.251" endtime="20221027 15:29:43.267"/>
+</kw>
+<msg timestamp="20221027 15:29:43.268" level="INFO">${text} = Een onafhankelijke expert biedt uitkomst. Daarom is Tweakers er. Inmiddels bestaat onze community uit meer dan een half miljoen leden met één grote passie: technologie. Samen met die community is de r...</msg>
+<status status="PASS" starttime="20221027 15:29:43.250" endtime="20221027 15:29:43.268"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${text}</arg>
+<arg>Zo helpen we je om te kiezen en het maximale uit je aankoop te halen.</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20221027 15:29:43.268" endtime="20221027 15:29:43.268"/>
+</kw>
+<status status="PASS" starttime="20221027 15:29:42.153" endtime="20221027 15:29:43.269"/>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20221027 15:29:43.270" endtime="20221027 15:29:45.555"/>
+</kw>
+<status status="PASS" starttime="20221027 15:29:38.018" endtime="20221027 15:29:45.555"/>
+</suite>
+<status status="PASS" starttime="20221027 15:29:37.992" endtime="20221027 15:29:45.560"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1" name="01 aboutUsTest">Tests.01 aboutUsTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

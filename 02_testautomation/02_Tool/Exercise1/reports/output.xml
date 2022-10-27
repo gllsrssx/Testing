@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0 (Python 3.10.7 on win32)" generated="20221027 15:26:30.295" rpa="false" schemaversion="3">
+<suite id="s1" name="Tests" source="C:\Users\gille\Documents\School\ThomasMore\Testing\02_testautomation\02_Tool\Exercise1\tests">
+<suite id="s1-s1" name="Hello" source="C:\Users\gille\Documents\School\ThomasMore\Testing\02_testautomation\02_Tool\Exercise1\tests\hello.robot">
+<test id="s1-s1-t1" name="Hello World" line="3">
+<kw name="Log" library="BuiltIn">
+<arg>Hello World!</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221027 15:26:30.321" level="INFO">Hello World!</msg>
+<status status="PASS" starttime="20221027 15:26:30.321" endtime="20221027 15:26:30.321"/>
+</kw>
+<status status="PASS" starttime="20221027 15:26:30.320" endtime="20221027 15:26:30.321"/>
+</test>
+<status status="PASS" starttime="20221027 15:26:30.318" endtime="20221027 15:26:30.323"/>
+</suite>
+<status status="PASS" starttime="20221027 15:26:30.297" endtime="20221027 15:26:30.324"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Hello">Tests.Hello</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

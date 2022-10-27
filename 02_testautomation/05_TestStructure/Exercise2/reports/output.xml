@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0 (Python 3.10.7 on win32)" generated="20221027 15:28:36.984" rpa="false" schemaversion="3">
+<suite id="s1" name="Tests" source="C:\Users\gille\Documents\School\ThomasMore\Testing\02_testautomation\05_TestStructure\Exercise2\tests">
+<suite id="s1-s1" name="01 openPageInBrowser" source="C:\Users\gille\Documents\School\ThomasMore\Testing\02_testautomation\05_TestStructure\Exercise2\tests\01_openPageInBrowser.robot">
+<test id="s1-s1-t1" name="The First Selenium Test" line="8">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://www.brightest.be</arg>
+<arg>Google Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221027 15:28:37.366" level="INFO">Opening browser 'Google Chrome' to base url 'http://www.brightest.be'.</msg>
+<status status="PASS" starttime="20221027 15:28:37.366" endtime="20221027 15:28:44.526"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221027 15:28:49.530" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221027 15:28:44.526" endtime="20221027 15:28:49.530"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20221027 15:28:49.531" endtime="20221027 15:28:51.677"/>
+</kw>
+<status status="PASS" starttime="20221027 15:28:37.366" endtime="20221027 15:28:51.678"/>
+</test>
+<test id="s1-s1-t2" name="The Selenium Test With Keywords" line="13">
+<kw name="Open My Website" library="basePage">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221027 15:28:51.680" level="INFO">Opening browser 'Google Chrome' to base url 'https://tweakers.net'.</msg>
+<status status="PASS" starttime="20221027 15:28:51.680" endtime="20221027 15:28:54.290"/>
+</kw>
+<status status="PASS" starttime="20221027 15:28:51.679" endtime="20221027 15:28:54.290"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221027 15:28:59.302" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221027 15:28:54.290" endtime="20221027 15:28:59.302"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20221027 15:28:59.302" endtime="20221027 15:29:01.437"/>
+</kw>
+<status status="PASS" starttime="20221027 15:28:51.678" endtime="20221027 15:29:01.438"/>
+</test>
+<status status="PASS" starttime="20221027 15:28:37.009" endtime="20221027 15:29:01.438"/>
+</suite>
+<suite id="s1-s2" name="04 locateAndInteractAndVerify" source="C:\Users\gille\Documents\School\ThomasMore\Testing\02_testautomation\05_TestStructure\Exercise2\tests\04_locateAndInteractAndVerify.robot">
+<kw name="Open My Website" library="basePage" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221027 15:29:01.444" level="INFO">Opening browser 'Google Chrome' to base url 'https://tweakers.net'.</msg>
+<status status="PASS" starttime="20221027 15:29:01.444" endtime="20221027 15:29:03.748"/>
+</kw>
+<status status="PASS" starttime="20221027 15:29:01.443" endtime="20221027 15:29:03.748"/>
+</kw>
+<test id="s1-s2-t1" name="Selenium Test Locate And Interact And Verify" line="11">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://*[@id="koekieBar"]/div[1]/div[2]/button[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221027 15:29:03.750" level="INFO">Clicking element 'xpath://*[@id="koekieBar"]/div[1]/div[2]/button[1]'.</msg>
+<status status="PASS" starttime="20221027 15:29:03.749" endtime="20221027 15:29:03.809"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>xpath://a[@class='smartphones']</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221027 15:29:03.839" level="INFO">${text} = Beste smartphones »</msg>
+<status status="PASS" starttime="20221027 15:29:03.810" endtime="20221027 15:29:03.839"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${text}</arg>
+<arg>Beste</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20221027 15:29:03.839" endtime="20221027 15:29:03.840"/>
+</kw>
+<status status="PASS" starttime="20221027 15:29:03.748" endtime="20221027 15:29:03.840"/>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20221027 15:29:03.843" endtime="20221027 15:29:06.026"/>
+</kw>
+<status status="PASS" starttime="20221027 15:29:01.439" endtime="20221027 15:29:06.026"/>
+</suite>
+<status status="PASS" starttime="20221027 15:28:36.985" endtime="20221027 15:29:06.027"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1" name="01 openPageInBrowser">Tests.01 openPageInBrowser</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s2" name="04 locateAndInteractAndVerify">Tests.04 locateAndInteractAndVerify</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
